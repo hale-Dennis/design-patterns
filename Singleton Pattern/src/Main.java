@@ -12,7 +12,7 @@ public class Main {
     static class ThreadFoo implements Runnable {
         @Override
         public void run() {
-            NaiveSingleton singleton =  NaiveSingleton.getInstance("FOO");
+            OptimizedSingleton singleton = OptimizedSingleton.getInstance("FOO");
             System.out.println(singleton.value);
         }
     }
@@ -20,7 +20,7 @@ public class Main {
     static class ThreadBar implements Runnable {
         @Override
         public void run() {
-            NaiveSingleton singleton =  NaiveSingleton.getInstance("BAR");
+            OptimizedSingleton singleton = OptimizedSingleton.getInstance("BAR");
             System.out.println(singleton.value);
         }
     }
