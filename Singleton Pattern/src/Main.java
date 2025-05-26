@@ -3,11 +3,25 @@ public class Main {
 
         System.out.println("If you see the same value, then singleton was reused" + "\n" + "If you see different values, then 2 singletons were created" + "\n\n" + "RESULT:" + "\n");
 
-        NaiveSingletonSingleThread singleton = NaiveSingletonSingleThread.getInstance("FOO");
-        NaiveSingletonSingleThread anotherSingleton = NaiveSingletonSingleThread.getInstance("BAR");
+        Thread threadFoo = new Thread(new ThreadFoo());
+        Thread threadBar = new Thread(new ThreadBar());
+        threadFoo.start();
+        threadBar.start();
+    }
 
-        System.out.println(singleton.value);
-        System.out.println(anotherSingleton.value);
+    static class ThreadFoo implements Runnable {
+        @Override
+        public void run() {
+            NaiveSingleton singleton =  NaiveSingleton.getInstance("FOO");
+            System.out.println(singleton.value);
+        }
+    }
 
+    static class ThreadBar implements Runnable {
+        @Override
+        public void run() {
+            NaiveSingleton singleton =  NaiveSingleton.getInstance("BAR");
+            System.out.println(singleton.value);
+        }
     }
 }
