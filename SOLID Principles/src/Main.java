@@ -1,14 +1,13 @@
-import ocp.Notification;
-import ocp.SMSNotification;
-import ocp.EmailNotification;
+import lsp.Bird;
+import lsp.Sparrow;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        Notification email = new EmailNotification();
-        Notification sms = new SMSNotification();
-        email.send("Hello via Email!");
-        sms.send("Hello via SMS!");
+        Bird sparrow = new Sparrow();
+        sparrow.fly();
+//        Bird ostrich = new Ostrich();
+//        ostrich.fly(); // Uncommenting this breaks LSP
     }
 }
