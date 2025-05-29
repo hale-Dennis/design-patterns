@@ -1,14 +1,20 @@
-import isp.HumanWorker;
-import isp.RobotWorker;
+import dip.Computer;
+import dip.Keyboard;
+import dip.WiredKeyboard;
+import dip.WirelessKeyboard;
 
 public class Main {
     public static void main(String[] args) {
 
-        HumanWorker human = new HumanWorker();
-        human.work();
-        human.eat();
+        Keyboard keyboard = new WiredKeyboard();
+        Keyboard newKeyboard = new WirelessKeyboard();
 
-        RobotWorker robot = new RobotWorker();
-        robot.work();
+        printKeyboard(newKeyboard);
+        printKeyboard(keyboard);
+    }
+
+    public static void printKeyboard(Keyboard keyboard) {
+        Computer computer = new Computer(keyboard);
+        computer.input();
     }
 }
