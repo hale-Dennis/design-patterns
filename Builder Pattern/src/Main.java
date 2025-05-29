@@ -5,5 +5,6 @@ public class Main {
                 .setPhone("123456789")
                 .setAddress("Ghana")
                 .build();
+        System.out.println(user);
     }
 }
