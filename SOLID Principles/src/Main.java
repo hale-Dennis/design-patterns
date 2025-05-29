@@ -1,13 +1,14 @@
-import lsp.Bird;
-import lsp.Sparrow;
-
+import isp.HumanWorker;
+import isp.RobotWorker;
 
 public class Main {
     public static void main(String[] args) {
 
-        Bird sparrow = new Sparrow();
-        sparrow.fly();
-//        Bird ostrich = new Ostrich();
-//        ostrich.fly(); // Uncommenting this breaks LSP
+        HumanWorker human = new HumanWorker();
+        human.work();
+        human.eat();
+
+        RobotWorker robot = new RobotWorker();
+        robot.work();
     }
 }
