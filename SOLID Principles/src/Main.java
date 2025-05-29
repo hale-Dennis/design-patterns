@@ -1,6 +1,4 @@
-import srp.User;
 import ocp.Notification;
-import srp.UserRepository;
 import ocp.SMSNotification;
 import ocp.EmailNotification;
 
