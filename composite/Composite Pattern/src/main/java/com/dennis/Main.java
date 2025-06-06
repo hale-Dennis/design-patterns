@@ -14,7 +14,6 @@ public class Main {
         manager2.addTeamMember(developer3);
 
         developer1.displayDetails();
-        System.out.println("___________");
         manager1.displayDetails();
 
     }
